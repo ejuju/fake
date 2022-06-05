@@ -10,9 +10,11 @@ import (
 
 func main() {
 	rand.Seed(int64(time.Now().Nanosecond()))
-	// rand.Seed(1) // to always get the same output
 
-	// generate all bunch of fake random data
+	// re-use the same seed if you want to get the same output
+	// rand.Seed(1)
+
+	// generate all bunch of fake random data for demonstratio purposes
 	var (
 		firstName  = fake.RandFirstName(nil)
 		lastName   = fake.RandLastName(nil)
