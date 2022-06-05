@@ -2,15 +2,18 @@
 
 This library aims at facilitating creating fake data. (not ML based for now)
 
-Data:
-- [x] Name
-- [x] Age
-- [ ] Postal address
-- [ ] Paragraph
-- [x] Email address
-- [ ] User agent
-- [x] URL
-- [ ] IP address
+In order to do so, the library provides: 
+- samples (first and last names, domain names)
+- a UUID generator (UUID version 4)
+- a standard User struct containing various common fields (email, name, id, etc.)
 
-Aggregates:
-- [x] User (age, name, email, etc.)
+Random data available:
+- [x] Unique ID (UUID v4)
+- [x] Name
+- [x] Postal address
+- [x] Paragraph
+- [x] Email address
+- [x] User agent
+- [x] URL
+- [x] IP address
+- [x] User (with name, email, etc.)

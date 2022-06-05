@@ -1,4 +1,4 @@
-package url
+package fake
 
 var SamplePopularDomainNames = []string{
 	"google.com",
