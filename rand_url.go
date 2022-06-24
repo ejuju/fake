@@ -7,17 +7,17 @@ import (
 	"github.com/ejuju/fake/internal/sample"
 )
 
-func RandURL(hosts []string, pageURIs []string) url.URL {
+func RandURL(hosts []string, pagePaths []string) url.URL {
 	if len(hosts) == 0 {
 		hosts = sample.PopularDomainNames
 	}
-	if len(pageURIs) == 0 {
-		pageURIs = sample.PageURIs
+	if len(pagePaths) == 0 {
+		pagePaths = sample.PagePaths
 	}
 
 	return url.URL{
 		Scheme: "https",
 		Host:   random.FromStringSlice(hosts),
-		Path:   "/" + random.FromStringSlice(sample.PageURIs),
+		Path:   random.FromStringSlice(sample.PagePaths),
 	}
 }

@@ -25,6 +25,7 @@ func main() {
 		paragraph  = fake.RandParagraph(nil)
 		user       = fake.RandUser(nil)
 		userAgent  = fake.RandUserAgent(nil)
+		url        = fake.RandURL(nil, nil)
 	)
 
 	fmt.Printf("First name: %s\n", firstName)
@@ -36,4 +37,5 @@ func main() {
 	fmt.Printf("Paragraph: %+v\n", paragraph)
 	fmt.Printf("User: %+v\n", user)
 	fmt.Printf("User agent: %+v\n", userAgent)
+	fmt.Printf("URL: %+v\n", url)
 }

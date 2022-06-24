@@ -20,9 +20,12 @@ var EmailProviderDomainNames = []string{
 	"hotmail.com",
 }
 
-var PageURIs = []string{
-	"contact",
-	"about",
+var PagePaths = []string{
+	"/",
+	"/contact",
+	"/about",
+	"/login",
+	"/signup",
 }
 
 var UserAgents = []string{
