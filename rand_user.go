@@ -29,13 +29,16 @@ func User(config *UserConfig) DefaultUser {
 		config.MaxAge = 60
 	}
 
+	firstName := FirstName(config.PossibleFirstNames)
+	lastName := LastName(config.PossibleLastNames)
+
 	return DefaultUser{
 		ID:        uuid.NewUUIDWithFallback(),
-		FirstName: FirstName(config.PossibleFirstNames),
-		LastName:  LastName(config.PossibleLastNames),
+		FirstName: firstName,
+		LastName:  lastName,
 		EmailAddress: EmailAddress(&EmailAddressConfig{
-			FirstNameList:               config.PossibleFirstNames,
-			LastNameList:                config.PossibleLastNames,
+			FirstNameList:               []string{firstName},
+			LastNameList:                []string{lastName},
 			EmailProviderDomainNameList: config.PossibleEmailProviders,
 		}),
 	}

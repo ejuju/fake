@@ -36,5 +36,9 @@ func (frenchAddressGenerator *FrenchAddressGenerator) String() string {
 
 	// French street address format example:
 	// "15 rue de la Garenne, 92500 Rueil-Malmaison, France"
-	return addr.StreetNumber + " " + addr.StreetName + ", " + addr.ZipCode + " " + addr.CityName + ", " + addr.CountryName
+	return addr.StreetNumber + " " +
+		addr.StreetName + ", " +
+		addr.ZipCode + " " +
+		addr.CityName + ", " +
+		addr.CountryName
 }

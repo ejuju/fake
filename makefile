@@ -7,3 +7,6 @@ gomod:
 test:
 	go vet
 	go test ./... -cover -timeout 60s -race -cpu 4
+
+demo:
+	go run ./examples/demo
