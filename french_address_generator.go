@@ -5,6 +5,7 @@ import (
 
 	"github.com/ejuju/fake/internal/postaladdress"
 	"github.com/ejuju/fake/internal/random"
+	"github.com/ejuju/fake/internal/sample"
 )
 
 type FrenchAddressGenerator struct {
@@ -14,10 +15,10 @@ type FrenchAddressGenerator struct {
 
 func (frenchAddressGenerator *FrenchAddressGenerator) Generate() postaladdress.Address {
 	if len(frenchAddressGenerator.FrenchCities) == 0 {
-		frenchAddressGenerator.FrenchCities = SampleFrenchCities
+		frenchAddressGenerator.FrenchCities = sample.FrenchCities
 	}
 	if len(frenchAddressGenerator.FrenchStreets) == 0 {
-		frenchAddressGenerator.FrenchStreets = SampleFrenchStreetNames
+		frenchAddressGenerator.FrenchStreets = sample.FrenchStreetNames
 	}
 
 	return postaladdress.Address{
@@ -32,5 +33,8 @@ func (frenchAddressGenerator *FrenchAddressGenerator) Generate() postaladdress.A
 
 func (frenchAddressGenerator *FrenchAddressGenerator) String() string {
 	addr := frenchAddressGenerator.Generate()
+
+	// French street address format example:
+	// "15 rue de la Garenne, 92500 Rueil-Malmaison, France"
 	return addr.StreetNumber + " " + addr.StreetName + ", " + addr.ZipCode + " " + addr.CityName + ", " + addr.CountryName
 }

@@ -1,6 +1,6 @@
-package fake
+package sample
 
-var SampleFrenchCities = []string{
+var FrenchCities = []string{
 	"Paris",
 	"Nice",
 	"Lyon",
@@ -11,7 +11,7 @@ var SampleFrenchCities = []string{
 	"Aix-en-Provence",
 }
 
-var SampleFrenchStreetNames = []string{
+var FrenchStreetNames = []string{
 	"Rue de l'Église",
 	"Place de la Mairie",
 	"Avenue Victor Hugo",

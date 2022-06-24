@@ -1,6 +1,31 @@
-package fake
+package sample
 
-var SampleUserAgents = []string{
+var PopularDomainNames = []string{
+	"google.com",
+	"facebook.com",
+	"youtube.com",
+	"wikipedia.org",
+	"amazon.com",
+	"instagram.com",
+	"yahoo.com",
+	"twitter.com",
+	"reddit.com",
+	"bit.ly",
+}
+
+var EmailProviderDomainNames = []string{
+	"gmail.com",
+	"outlook.com",
+	"yahoo.com",
+	"hotmail.com",
+}
+
+var PageURIs = []string{
+	"contact",
+	"about",
+}
+
+var UserAgents = []string{
 	"Mozilla/5.0 (Linux; Android 10; moto e(7) power Build/QOM30.255-12; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/85.0.4183.101 Mobile Safari/537.36",
 	"Mozilla/5.0 (Linux; Android 11; moto g(50) Build/RRFS31.Q1-59-76-2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/92.0.4515.159 Mobile Safari/537.36 EdgW/1.0",
 	"Mozilla/5.0 (Linux; Android 10; moto g play (2021)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.127 Mobile Safari/537.36",

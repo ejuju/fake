@@ -5,6 +5,7 @@ import (
 	"strings"
 
 	"github.com/ejuju/fake/internal/random"
+	"github.com/ejuju/fake/internal/sample"
 )
 
 type RandEmailAddressConfig struct {
@@ -18,7 +19,7 @@ func RandEmailAddress(config *RandEmailAddressConfig) mail.Address {
 		config = &RandEmailAddressConfig{}
 	}
 	if len(config.EmailProviderDomainNameList) == 0 {
-		config.EmailProviderDomainNameList = SampleEmailProviderDomainNames
+		config.EmailProviderDomainNameList = sample.EmailProviderDomainNames
 	}
 
 	firstName := RandFirstName(config.FirstNameList)

@@ -8,12 +8,12 @@ In order to do so, the library provides:
 - a standard User struct containing various common fields (email, name, id, etc.)
 
 Random data available:
-- [x] Unique ID (UUID v4)
 - [x] Name
 - [x] Postal address
 - [x] Paragraph
 - [x] Email address
 - [x] User agent
-- [x] URL
-- [x] IP address
 - [x] User (with name, email, etc.)
+- [x] IP address
+- [x] Unique ID (UUID v4)
+- [x] URL

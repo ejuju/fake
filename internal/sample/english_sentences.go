@@ -1,6 +1,6 @@
-package fake
+package sample
 
-var SampleEnglishSentences = []string{
+var EnglishSentences = []string{
 	"I've never seen a more beautiful brandy glass filled with wine.",
 	"He is good at eating pickles and telling women about his emotional problems.",
 	"If you spin around three times, you'll start to feel melancholy.",

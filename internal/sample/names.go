@@ -1,6 +1,6 @@
-package fake
+package sample
 
-var SampleEnglishFirstNames = []string{
+var EnglishFirstNames = []string{
 	"Abigail",
 	"Alexandra",
 	"Alison",
@@ -167,7 +167,7 @@ var SampleEnglishFirstNames = []string{
 	"William",
 }
 
-var SampleEnglishLastNames = []string{
+var EnglishLastNames = []string{
 	"Abraham",
 	"Allan",
 	"Alsop",
