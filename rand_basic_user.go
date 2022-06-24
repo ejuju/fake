@@ -6,14 +6,14 @@ import (
 	"github.com/ejuju/fake/internal/uuid"
 )
 
-type DefaultUser struct {
+type BasicUser struct {
 	ID           string       `json:"id"`
 	EmailAddress mail.Address `json:"email_address"`
 	FirstName    string       `json:"first_name"`
 	LastName     string       `json:"last_name"`
 }
 
-type UserConfig struct {
+type BasicUserConfig struct {
 	PossibleFirstNames     []string
 	PossibleLastNames      []string
 	PossibleEmailProviders []string
@@ -21,9 +21,9 @@ type UserConfig struct {
 	MaxAge                 int
 }
 
-func User(config *UserConfig) DefaultUser {
+func User(config *BasicUserConfig) BasicUser {
 	if config == nil {
-		config = &UserConfig{MinAge: 18}
+		config = &BasicUserConfig{MinAge: 18}
 	}
 	if config.MaxAge == 0 {
 		config.MaxAge = 60
@@ -32,7 +32,7 @@ func User(config *UserConfig) DefaultUser {
 	firstName := FirstName(config.PossibleFirstNames)
 	lastName := LastName(config.PossibleLastNames)
 
-	return DefaultUser{
+	return BasicUser{
 		ID:        uuid.NewUUIDWithFallback(),
 		FirstName: firstName,
 		LastName:  lastName,
