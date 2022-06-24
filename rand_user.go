@@ -6,14 +6,14 @@ import (
 	"github.com/ejuju/fake/internal/uuid"
 )
 
-type User struct {
-	EmailAddress mail.Address `json:"email_address"`
+type DefaultUser struct {
 	ID           string       `json:"id"`
+	EmailAddress mail.Address `json:"email_address"`
 	FirstName    string       `json:"first_name"`
 	LastName     string       `json:"last_name"`
 }
 
-type RandUserConfig struct {
+type UserConfig struct {
 	PossibleFirstNames     []string
 	PossibleLastNames      []string
 	PossibleEmailProviders []string
@@ -21,19 +21,19 @@ type RandUserConfig struct {
 	MaxAge                 int
 }
 
-func RandUser(config *RandUserConfig) User {
+func User(config *UserConfig) DefaultUser {
 	if config == nil {
-		config = &RandUserConfig{MinAge: 18}
+		config = &UserConfig{MinAge: 18}
 	}
 	if config.MaxAge == 0 {
 		config.MaxAge = 60
 	}
 
-	return User{
+	return DefaultUser{
 		ID:        uuid.NewUUIDWithFallback(),
-		FirstName: RandFirstName(config.PossibleFirstNames),
-		LastName:  RandLastName(config.PossibleLastNames),
-		EmailAddress: RandEmailAddress(&RandEmailAddressConfig{
+		FirstName: FirstName(config.PossibleFirstNames),
+		LastName:  LastName(config.PossibleLastNames),
+		EmailAddress: EmailAddress(&EmailAddressConfig{
 			FirstNameList:               config.PossibleFirstNames,
 			LastNameList:                config.PossibleLastNames,
 			EmailProviderDomainNameList: config.PossibleEmailProviders,

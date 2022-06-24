@@ -5,7 +5,7 @@ import (
 	"net"
 )
 
-func RandIPAddress() net.IPAddr {
+func IPAddress() net.IPAddr {
 	return net.IPAddr{
 		IP: net.IPv4(byte(rand.Intn(255)), byte(rand.Intn(255)), byte(rand.Intn(255)), byte(rand.Intn(255))),
 	}

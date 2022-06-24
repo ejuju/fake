@@ -7,7 +7,7 @@ import (
 	"github.com/ejuju/fake/internal/sample"
 )
 
-func RandURL(hosts []string, pagePaths []string) url.URL {
+func URL(hosts []string, pagePaths []string) url.URL {
 	if len(hosts) == 0 {
 		hosts = sample.PopularDomainNames
 	}

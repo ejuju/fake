@@ -16,16 +16,16 @@ func main() {
 
 	// generate all bunch of fake random data for demonstratio purposes
 	var (
-		firstName  = fake.RandFirstName(nil)
-		lastName   = fake.RandLastName(nil)
-		fullName   = fake.RandName(nil, nil)
-		emailAddr  = fake.RandEmailAddress(nil).Address
-		ipAddr     = fake.RandIPAddress().IP.String()
-		postalAddr = fake.RandPostalAddressString(&fake.FrenchAddressGenerator{})
-		paragraph  = fake.RandParagraph(nil)
-		user       = fake.RandUser(nil)
-		userAgent  = fake.RandUserAgent(nil)
-		url        = fake.RandURL(nil, nil)
+		firstName  = fake.FirstName(nil)
+		lastName   = fake.LastName(nil)
+		fullName   = fake.Name(nil, nil)
+		emailAddr  = fake.EmailAddress(nil).Address
+		ipAddr     = fake.IPAddress().IP.String()
+		postalAddr = fake.PostalAddressString(&fake.FrenchAddressGenerator{})
+		paragraph  = fake.Paragraph(nil)
+		user       = fake.User(nil)
+		userAgent  = fake.UserAgent(nil)
+		url        = fake.URL(nil, nil)
 	)
 
 	fmt.Printf("First name: %s\n", firstName)

@@ -17,3 +17,7 @@ Random data available:
 - [x] IP address
 - [x] Unique ID (UUID v4)
 - [x] URL
+
+Possible improvements:
+- [ ] Be able to only generate random IP addresses within a certain range
+- [ ] Be able to control paragraph length

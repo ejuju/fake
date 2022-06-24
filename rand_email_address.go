@@ -8,22 +8,22 @@ import (
 	"github.com/ejuju/fake/internal/sample"
 )
 
-type RandEmailAddressConfig struct {
+type EmailAddressConfig struct {
 	FirstNameList               []string
 	LastNameList                []string
 	EmailProviderDomainNameList []string
 }
 
-func RandEmailAddress(config *RandEmailAddressConfig) mail.Address {
+func EmailAddress(config *EmailAddressConfig) mail.Address {
 	if config == nil {
-		config = &RandEmailAddressConfig{}
+		config = &EmailAddressConfig{}
 	}
 	if len(config.EmailProviderDomainNameList) == 0 {
 		config.EmailProviderDomainNameList = sample.EmailProviderDomainNames
 	}
 
-	firstName := RandFirstName(config.FirstNameList)
-	lastName := RandLastName(config.FirstNameList)
+	firstName := FirstName(config.FirstNameList)
+	lastName := LastName(config.FirstNameList)
 	emailProviderDomain := random.FromStringSlice(config.EmailProviderDomainNameList)
 	address := firstName + "_" + lastName + "@" + emailProviderDomain
 	address = strings.ReplaceAll(address, " ", "")

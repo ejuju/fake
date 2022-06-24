@@ -5,7 +5,7 @@ import (
 	"github.com/ejuju/fake/internal/sample"
 )
 
-func RandUserAgent(sampleUserAgents []string) string {
+func UserAgent(sampleUserAgents []string) string {
 	if len(sampleUserAgents) == 0 {
 		sampleUserAgents = sample.UserAgents
 	}

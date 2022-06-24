@@ -2,10 +2,10 @@ package fake
 
 import "github.com/ejuju/fake/internal/postaladdress"
 
-func RandPostalAddress(addressGenerator postaladdress.AddressGenerator) postaladdress.Address {
+func PostalAddress(addressGenerator postaladdress.AddressGenerator) postaladdress.Address {
 	return addressGenerator.Generate()
 }
 
-func RandPostalAddressString(addressGenerator postaladdress.AddressGenerator) string {
+func PostalAddressString(addressGenerator postaladdress.AddressGenerator) string {
 	return addressGenerator.String()
 }
