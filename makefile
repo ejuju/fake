@@ -1,6 +1,6 @@
-pre-commit: gomod test
+pre-commit: mod test
 
-gomod:
+mod:
 	go mod tidy
 	go mod verify
 
