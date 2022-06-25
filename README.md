@@ -13,6 +13,9 @@ Random data available:
 - [x] Unique ID (UUID v4)
 - [x] URL
 
+Todo:
+- [ ] Add unit tests
+
 Possible improvements:
 - [ ] Be able to only generate random IP addresses within a certain range
 - [ ] Be able to control paragraph length
