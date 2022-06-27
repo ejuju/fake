@@ -1,4 +1,4 @@
-package postaladdress
+package geo
 
 type AddressGenerator interface {
 	Generate() Address

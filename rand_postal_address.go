@@ -1,11 +1,11 @@
 package fake
 
-import "github.com/ejuju/fake/internal/postaladdress"
+import "github.com/ejuju/fake/internal/geo"
 
-func PostalAddress(addressGenerator postaladdress.AddressGenerator) postaladdress.Address {
+func PostalAddress(addressGenerator geo.AddressGenerator) geo.Address {
 	return addressGenerator.Generate()
 }
 
-func PostalAddressString(addressGenerator postaladdress.AddressGenerator) string {
+func PostalAddressString(addressGenerator geo.AddressGenerator) string {
 	return addressGenerator.String()
 }

@@ -3,7 +3,7 @@ package fake
 import (
 	"strconv"
 
-	"github.com/ejuju/fake/internal/postaladdress"
+	"github.com/ejuju/fake/internal/geo"
 	"github.com/ejuju/fake/internal/random"
 	"github.com/ejuju/fake/internal/sample"
 )
@@ -13,7 +13,7 @@ type FrenchAddressGenerator struct {
 	FrenchStreets []string
 }
 
-func (frenchAddressGenerator *FrenchAddressGenerator) Generate() postaladdress.Address {
+func (frenchAddressGenerator *FrenchAddressGenerator) Generate() geo.Address {
 	if len(frenchAddressGenerator.FrenchCities) == 0 {
 		frenchAddressGenerator.FrenchCities = sample.FrenchCities
 	}
@@ -21,7 +21,7 @@ func (frenchAddressGenerator *FrenchAddressGenerator) Generate() postaladdress.A
 		frenchAddressGenerator.FrenchStreets = sample.FrenchStreetNames
 	}
 
-	return postaladdress.Address{
+	return geo.Address{
 		CountryName:  "France",
 		CountryCode:  "FR",
 		ZipCode:      strconv.Itoa(random.IntMinMax(10000, 95700)),
