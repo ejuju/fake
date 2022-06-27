@@ -19,3 +19,4 @@ Todo:
 Possible improvements:
 - [ ] Be able to only generate random IP addresses within a certain range
 - [ ] Be able to control paragraph length
+- [ ] Be able to generate locally consistent data (phone number / address / name / etc. from a given country)
