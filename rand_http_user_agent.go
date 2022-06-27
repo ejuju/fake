@@ -5,7 +5,7 @@ import (
 	"github.com/ejuju/fake/internal/sample"
 )
 
-func UserAgent(sampleUserAgents []string) string {
+func HTTPUserAgent(sampleUserAgents []string) string {
 	if len(sampleUserAgents) == 0 {
 		sampleUserAgents = sample.UserAgents
 	}

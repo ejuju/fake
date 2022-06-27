@@ -24,7 +24,7 @@ func main() {
 		postalAddr = fake.PostalAddressString(&fake.FrenchAddressGenerator{})
 		paragraph  = fake.Paragraph(nil)
 		user       = fake.User(nil)
-		userAgent  = fake.UserAgent(nil)
+		userAgent  = fake.HTTPUserAgent(nil)
 		url        = fake.URL(nil, nil).String()
 	)
 
