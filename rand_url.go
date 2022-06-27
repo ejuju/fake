@@ -18,6 +18,6 @@ func URL(hosts []string, pagePaths []string) *url.URL {
 	return &url.URL{
 		Scheme: "https",
 		Host:   random.FromStringSlice(hosts),
-		Path:   random.FromStringSlice(sample.PagePaths),
+		Path:   random.FromStringSlice(pagePaths),
 	}
 }
