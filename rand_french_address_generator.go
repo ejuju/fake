@@ -1,8 +1,6 @@
 package fake
 
 import (
-	"strconv"
-
 	"github.com/ejuju/fake/internal/geo"
 	"github.com/ejuju/fake/internal/random"
 	"github.com/ejuju/fake/internal/sample"
@@ -11,6 +9,10 @@ import (
 type FrenchAddressGenerator struct {
 	FrenchCities  []string
 	FrenchStreets []string
+	PostalCodes   []string
+	StreetNumbers []string
+	CountryName   string
+	CountryCode   string
 }
 
 func (frenchAddressGenerator *FrenchAddressGenerator) Generate() geo.Address {
@@ -20,14 +22,26 @@ func (frenchAddressGenerator *FrenchAddressGenerator) Generate() geo.Address {
 	if len(frenchAddressGenerator.FrenchStreets) == 0 {
 		frenchAddressGenerator.FrenchStreets = sample.FrenchStreetNames
 	}
+	if len(frenchAddressGenerator.PostalCodes) == 0 {
+		frenchAddressGenerator.PostalCodes = sample.FrenchPostalCodes
+	}
+	if len(frenchAddressGenerator.StreetNumbers) == 0 {
+		frenchAddressGenerator.StreetNumbers = sample.FrenchStreetNumbers
+	}
+	if frenchAddressGenerator.CountryName == "" {
+		frenchAddressGenerator.CountryName = "France"
+	}
+	if frenchAddressGenerator.CountryCode == "" {
+		frenchAddressGenerator.CountryCode = "FR"
+	}
 
 	return geo.Address{
-		CountryName:  "France",
-		CountryCode:  "FR",
-		ZipCode:      strconv.Itoa(random.IntMinMax(10000, 95700)),
+		CountryName:  frenchAddressGenerator.CountryName,
+		CountryCode:  frenchAddressGenerator.CountryCode,
+		ZipCode:      random.FromStringSlice(frenchAddressGenerator.PostalCodes),
 		CityName:     random.FromStringSlice(frenchAddressGenerator.FrenchCities),
 		StreetName:   random.FromStringSlice(frenchAddressGenerator.FrenchStreets),
-		StreetNumber: strconv.Itoa(random.IntMinMax(1, 150)),
+		StreetNumber: random.FromStringSlice(frenchAddressGenerator.StreetNumbers),
 	}
 }
 

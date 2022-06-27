@@ -6,7 +6,9 @@ import (
 )
 
 func TestURL(t *testing.T) {
-	t.Run("should return URL using custom hosts and page paths", func(t *testing.T) {
+	t.Parallel()
+
+	t.Run("should work with configuration", func(t *testing.T) {
 		resultURL := URL([]string{"www.example.com"}, []string{"/"})
 		want := "https://www.example.com/"
 		got := resultURL.String()
@@ -15,7 +17,7 @@ func TestURL(t *testing.T) {
 		}
 	})
 
-	t.Run("should return correctly formatted URL using when no hosts and page paths are provided", func(t *testing.T) {
+	t.Run("should work without configuration", func(t *testing.T) {
 		resultURL := URL([]string{}, nil) // check nil and empty slice
 		got := resultURL.String()
 		_, err := url.Parse(got)
