@@ -2,7 +2,7 @@ package fake
 
 import (
 	"github.com/ejuju/fake/internal/random"
-	"github.com/ejuju/fake/internal/sample"
+	"github.com/ejuju/fake/pkg/sample"
 )
 
 func Paragraph(sampleParagraphs []string) string {
