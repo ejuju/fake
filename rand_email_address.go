@@ -23,7 +23,7 @@ func EmailAddress(config *EmailAddressConfig) mail.Address {
 	}
 
 	firstName := FirstName(config.FirstNameList)
-	lastName := LastName(config.FirstNameList)
+	lastName := LastName(config.LastNameList)
 	emailProviderDomain := random.FromStringSlice(config.EmailProviderDomainNameList)
 	address := firstName + "_" + lastName + "@" + emailProviderDomain
 	address = strings.ReplaceAll(address, " ", "")
